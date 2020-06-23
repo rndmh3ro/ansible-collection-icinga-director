@@ -9,8 +9,6 @@ jobs:
     services:
       icinga:
         image: jordan/icinga2
-        ports:
-        - 80:80
         env:
           ICINGA2_FEATURE_DIRECTOR_PASS: "icinga"
     steps:
@@ -22,6 +20,7 @@ jobs:
           path: ansible-collection-icinga-director/collections/ansible_collections/t_systems_mms/icinga_director
 
       - name: Run integration tests
-        run: export ANSIBLE_COLLECTIONS_PATHS=ansible-collection-icinga-director/collections/:../../ansible-collection-icinga-director/collections/:collections/; ansible-playbook tests/integration/test.yml
+        #run: export ANSIBLE_COLLECTIONS_PATHS=ansible-collection-icinga-director/collections/:../../ansible-collection-icinga-director/collections/:collections/; ansible-playbook tests/integration/test.yml
+        run: ansible-playbook -i tests/integration/hosts tests/integration/test.yml
         env:
           ANSIBLE_COLLECTIONS_PATHS: ansible-collection-icinga-director/collections/:../../ansible-collection-icinga-director/collections/:collections/
