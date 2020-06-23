@@ -7,31 +7,31 @@
     icinga_username: "icingaadmin"
     icinga_password: "icinga"
   tasks:
-    - shell: ls collections
+    - shell: ls ../../collections
       register: out
       ignore_errors: true
     - debug:
         msg: "{{ out }}"
       ignore_errors: true
-    - shell: ls ansible-collection-icinga-director/
+    - shell: ls ../../ansible-collection-icinga-director/
       register: out
       ignore_errors: true
     - debug:
         msg: "{{ out }}"
       ignore_errors: true
-    - shell: ls ansible-collection-icinga-director/collections/
+    - shell: ls ../../ansible-collection-icinga-director/collections/
       register: out
       ignore_errors: true
     - debug:
         msg: "{{ out }}"
       ignore_errors: true
-    - shell: ls ansible-collection-icinga-director/collections/ansible_collections/t_systems_mms/
+    - shell: ls ../../ansible-collection-icinga-director/collections/ansible_collections/t_systems_mms/
       register: out
       ignore_errors: true
     - debug:
         msg: "{{ out }}"
       ignore_errors: true
-    - shell: ls ansible-collection-icinga-director/collections/ansible_collections/t_systems_mms/icinga_director
+    - shell: ls ../../ansible-collection-icinga-director/collections/ansible_collections/t_systems_mms/icinga_director
       register: out
       ignore_errors: true
     - debug:
