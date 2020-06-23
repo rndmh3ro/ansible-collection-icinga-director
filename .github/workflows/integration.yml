@@ -3,8 +3,9 @@ name: ansible-integration
 on: [push, pull_request]
 
 jobs:
-  build:
+  integration:
     runs-on: ubuntu-latest
+    container: ubuntu:latest
     services:
       icinga:
         image: jordan/icinga2
