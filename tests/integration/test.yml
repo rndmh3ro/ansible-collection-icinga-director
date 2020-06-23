@@ -7,6 +7,10 @@
     icinga_username: "icingaadmin"
     icinga_password: "icinga"
   tasks:
+    - shell: pwd
+      register: out
+    - debug:
+        msg: "{{ out }}"
     - include_tasks: "icinga_user.yml"
     #- include_tasks: "{{ item }}"
     #  with_fileglob:
