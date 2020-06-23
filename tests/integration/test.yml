@@ -7,7 +7,7 @@
     icinga_username: "icingaadmin"
     icinga_password: "icinga"
   tasks:
-    - shell: ls $ANSIBLE_COLLECTIONS_PATHS/ansible_collections/t_systems_mms/icinga_director
+    - shell: ls $ANSIBLE_COLLECTIONS_PATHS/; ls $ANSIBLE_COLLECTIONS_PATHS/ansible_collections/t_systems_mms/
       register: out
     - debug:
         msg: "{{ out }}"
