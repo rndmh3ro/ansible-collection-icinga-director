@@ -13,7 +13,7 @@ jobs:
         - 80:80
     steps:
       - name: Check out code
-        uses: actions/checkout@v1
+        uses: actions/checkout@v2
         with:
           path: collections/ansible_collections/t_systems_mms/icinga_director
       - name: Run playbook
