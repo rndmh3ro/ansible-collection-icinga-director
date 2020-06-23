@@ -11,6 +11,10 @@
       register: out
     - debug:
         msg: "{{ out }}"
+    - shell: "ls -lsah *"
+      register: out2
+    - debug:
+        msg: "{{ out2 }}"
     - include_tasks: "icinga_user.yml"
     #- include_tasks: "{{ item }}"
     #  with_fileglob:
