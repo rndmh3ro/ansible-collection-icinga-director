@@ -1,7 +1,10 @@
 - hosts: localhost
+  gather_facts: false
   vars:
     icinga_url: "http://icinga"
     icinga_username: "icingaadmin"
     icinga_password: "icinga"
   tasks:
-    - include_tasks: ./icinga_user.yml
+    - include: "{{ item }}"
+      with_fileglob:
+        - ./icinga_*.yml
