@@ -4,6 +4,7 @@
       url: "{{ icinga_url }}"
       url_username: "{{ icinga_user }}"
       url_password: "{{ icinga_pass }}"
+      validate_certs: false
       arguments:
           '--authpassphrase':
               value: $snmpv3_priv_key$
