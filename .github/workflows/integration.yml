@@ -21,6 +21,6 @@ jobs:
       - name: Run playbook
         uses: dawidd6/action-ansible-playbook@v2
         env:
-          ANSIBLE_COLLECTIONS_PATHS: $GITHUB_WORKSPACE/collections
+          ANSIBLE_COLLECTIONS_PATHS: ./collections
         with:
           playbook: tests/integration/test.yml
