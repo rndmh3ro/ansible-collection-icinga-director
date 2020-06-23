@@ -4,6 +4,6 @@
       url: "{{ icinga_url }}"
       url_username: "{{ icinga_user }}"
       url_password: "{{ icinga_pass }}"
-      object_name: "a_user_template"
+      object_name: "user"
       enable_notifications: true
       period: '24/7'

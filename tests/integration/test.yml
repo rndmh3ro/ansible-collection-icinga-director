@@ -3,10 +3,21 @@
   collections:
     - t_systems_mms.icinga_director
   vars:
-    icinga_url: "http://icinga"
+    icinga_url: "http://localhost:80/icingaweb2"
     icinga_user: "icingaadmin"
     icinga_pass: "icinga"
   tasks:
     - include_tasks: "{{ item }}"
-      with_fileglob:
-        - ./icinga_*.yml
+      loop:
+        - ./icinga_command.yml
+        - ./icinga_command_template.yml
+        - ./icinga_timeperiod.yml
+        - ./icinga_user_template.yml
+        - ./icinga_user.yml
+        #- ./icinga_notification.yml
+        - ./icinga_hostgroup.yml
+        - ./icinga_servicegroup.yml
+        - ./icinga_service_template.yml
+        - ./icinga_service_apply.yml
+        #- ./icinga_hostgroup.yml
+        #- ./icinga_host.yml

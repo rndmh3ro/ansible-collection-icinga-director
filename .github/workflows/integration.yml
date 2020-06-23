@@ -11,6 +11,8 @@ jobs:
         image: jordan/icinga2
         ports:
         - 80:80
+        env:
+          ICINGA2_FEATURE_DIRECTOR_PASS: "icinga"
     steps:
       - name: Check out code
         uses: actions/checkout@v2

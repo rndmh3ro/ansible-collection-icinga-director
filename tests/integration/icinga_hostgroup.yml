@@ -4,5 +4,6 @@
       url: "{{ icinga_url }}"
       url_username: "{{ icinga_user }}"
       url_password: "{{ icinga_pass }}"
-      object_name: customer-hostgroup
-      assign_filter: 'host.name="cust-*"'
+      object_name: foohostgroup
+      display_name: foohostgroup
+      assign_filter: 'host.name="foohost"'
