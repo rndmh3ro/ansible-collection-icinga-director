@@ -7,18 +7,36 @@
     icinga_username: "icingaadmin"
     icinga_password: "icinga"
   tasks:
-    - shell: ls $ANSIBLE_COLLECTIONS_PATHS/*
+    - shell: ls collections
       register: out
+      ignore_errors: true
     - debug:
         msg: "{{ out }}"
-    - shell: ls $ANSIBLE_COLLECTIONS_PATHS/*/*
+      ignore_errors: true
+    - shell: ls ansible-collection-icinga-director/
       register: out
+      ignore_errors: true
     - debug:
         msg: "{{ out }}"
-    - shell: ls $ANSIBLE_COLLECTIONS_PATHS/*/*/*
+      ignore_errors: true
+    - shell: ls ansible-collection-icinga-director/collections/
       register: out
+      ignore_errors: true
     - debug:
         msg: "{{ out }}"
+      ignore_errors: true
+    - shell: ls ansible-collection-icinga-director/collections/ansible_collections/t_systems_mms/
+      register: out
+      ignore_errors: true
+    - debug:
+        msg: "{{ out }}"
+      ignore_errors: true
+    - shell: ls ansible-collection-icinga-director/collections/ansible_collections/t_systems_mms/icinga_director
+      register: out
+      ignore_errors: true
+    - debug:
+        msg: "{{ out }}"
+      ignore_errors: true
     - include_tasks: "{{ item }}"
       with_fileglob:
         - ./icinga_*.yml
