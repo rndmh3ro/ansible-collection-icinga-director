@@ -22,3 +22,4 @@ jobs:
           ANSIBLE_COLLECTIONS_PATHS: ./collections:/home/runner/work/ansible-collection-icinga-director/collections/
         with:
           playbook: tests/integration/test.yml
+        working_directory: /home/runner/work/ansible-collection-icinga-director/
