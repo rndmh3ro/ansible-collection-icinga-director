@@ -17,9 +17,9 @@ jobs:
       - name: Check out code
         uses: actions/checkout@v2
         with:
-          path: collections/ansible_collections/t_systems_mms/icinga_director
+          path: ansible-collection-icinga-director/collections/ansible_collections/t_systems_mms/icinga_director
 
       - name: Run integration tests
         run: ansible-playbook tests/integration/test.yml
         env:
-          ANSIBLE_COLLECTIONS_PATHS: collections/ansible_collections/t_systems_mms/icinga_director
+          ANSIBLE_COLLECTIONS_PATHS: ansible-collection-icinga-director/collections/ansible_collections/t_systems_mms/icinga_director
