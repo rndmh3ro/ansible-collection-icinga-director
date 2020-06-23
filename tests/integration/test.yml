@@ -5,6 +5,6 @@
     icinga_username: "icingaadmin"
     icinga_password: "icinga"
   tasks:
-    - include: "{{ item }}"
+    - include_tasks: "{{ item }}"
       with_fileglob:
         - ./icinga_*.yml
