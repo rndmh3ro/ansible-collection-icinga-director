@@ -7,10 +7,10 @@
     icinga_username: "icingaadmin"
     icinga_password: "icinga"
   tasks:
-    - shell: ls -lsa $GITHUB_WORKSPACE/collections/*/*/
+    - shell: echo $ANSIBLE_COLLECTIONS_PATHS
       register: out
     - debug:
         msg: "{{ out }}"
-    #- include_tasks: "{{ item }}"
-    #  with_fileglob:
-    #    - ./icinga_*.yml
+    - include_tasks: "{{ item }}"
+      with_fileglob:
+        - ./icinga_*.yml
