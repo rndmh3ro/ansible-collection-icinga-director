@@ -5,7 +5,7 @@ on: [push, pull_request]
 jobs:
   integration:
     runs-on: ubuntu-latest
-    container: ubuntu:latest
+    container: rndmh3ro/docker-centos8-ansible:latest
     services:
       icinga:
         image: jordan/icinga2
