@@ -12,10 +12,6 @@ jobs:
         ports:
         - 80:80
     steps:
-      - name: Set up Python 3.7
-        uses: actions/setup-python@v1
-        with:
-          python-version: 3.7
       - name: Check out code
         uses: actions/checkout@v1
         with:

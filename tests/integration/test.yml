@@ -1,10 +1,13 @@
 - hosts: localhost
   gather_facts: false
+  collections:
+    - t_systems_mms.icinga_director
   vars:
     icinga_url: "http://icinga"
     icinga_username: "icingaadmin"
     icinga_password: "icinga"
   tasks:
-    - include_tasks: "{{ item }}"
-      with_fileglob:
-        - ./icinga_*.yml
+    - include_tasks: "icinga_user.yml"
+    #- include_tasks: "{{ item }}"
+    #  with_fileglob:
+    #    - ./icinga_*.yml
