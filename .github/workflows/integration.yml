@@ -21,6 +21,6 @@ jobs:
 
       - name: Run integration tests
         #run: export ANSIBLE_COLLECTIONS_PATHS=ansible-collection-icinga-director/collections/:../../ansible-collection-icinga-director/collections/:collections/; ansible-playbook tests/integration/test.yml
-        run: ansible-playbook -i tests/integration/hosts tests/integration/test.yml
+        run: ansible-playbook tests/integration/test.yml
         env:
           ANSIBLE_COLLECTIONS_PATHS: ansible-collection-icinga-director/collections/:../../ansible-collection-icinga-director/collections/:collections/
