@@ -7,15 +7,10 @@
     icinga_username: "icingaadmin"
     icinga_password: "icinga"
   tasks:
-    - shell: pwd
+    - shell: echo $GITHUB_WORKSPACE/collections; ls -lsa $GITHUB_WORKSPACE/collections
       register: out
     - debug:
         msg: "{{ out }}"
-    - shell: "ls -lsah *"
-      register: out2
-    - debug:
-        msg: "{{ out2 }}"
-    - include_tasks: "icinga_user.yml"
     #- include_tasks: "{{ item }}"
     #  with_fileglob:
     #    - ./icinga_*.yml
