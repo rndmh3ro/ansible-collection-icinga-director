@@ -18,7 +18,7 @@ jobs:
       - name: Check out code
         uses: actions/checkout@v1
         with:
-          path: tests/integration/ansible_collections/t_systems_mms/icinga_director
+          path: tests/integration/collections/ansible_collections/t_systems_mms/icinga_director
       - name: Install Ansible
         run: pip install ansible --disable-pip-version-check
       - name: Run playbook
