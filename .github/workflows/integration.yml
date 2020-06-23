@@ -21,6 +21,6 @@ jobs:
       - name: Run playbook
         uses: dawidd6/action-ansible-playbook@v2
         env:
-          ANSIBLE_COLLECTIONS_PATHS: ./collections:/home/runner/work/ansible-collection-icinga-director/collections/
+          ANSIBLE_COLLECTIONS_PATHS: $GITHUB_WORKSPACE/collections
         with:
           playbook: tests/integration/test.yml
