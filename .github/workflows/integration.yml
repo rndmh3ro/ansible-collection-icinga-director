@@ -5,7 +5,7 @@ on: [push, pull_request]
 jobs:
   integration:
     runs-on: ubuntu-latest
-    #container: rndmh3ro/docker-centos8-ansible:latest
+    container: rndmh3ro/docker-centos8-ansible:latest
     strategy:
       matrix:
         python_version: ['3.6']
@@ -18,13 +18,13 @@ jobs:
         env:
           ICINGA2_FEATURE_DIRECTOR_PASS: "icinga"
     steps:
-      - name: Set up Python ${{ matrix.python_version }}
-        uses: actions/setup-python@v1
-        with:
-          python-version: ${{ matrix.python_version }}
+      #- name: Set up Python ${{ matrix.python_version }}
+      #  uses: actions/setup-python@v1
+      #  with:
+      #    python-version: ${{ matrix.python_version }}
 
-      - name: Install ansible base
-        run: pip install ansible
+      #- name: Install ansible base
+      #  run: pip install ansible
 
       - name: Check out code
         uses: actions/checkout@v2
