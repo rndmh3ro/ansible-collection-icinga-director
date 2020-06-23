@@ -22,4 +22,4 @@ jobs:
       - name: Run integration tests
         run: ansible-playbook tests/integration/test.yml
         env:
-          ANSIBLE_COLLECTIONS_PATHS: ansible-collection-icinga-director/collections/ansible_collections/t_systems_mms/icinga_director
+          ANSIBLE_COLLECTIONS_PATHS: ansible-collection-icinga-director/collections/:../../ansible-collection-icinga-director/collections/:collections/
