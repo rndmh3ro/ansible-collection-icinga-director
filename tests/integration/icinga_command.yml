@@ -1,7 +1,7 @@
   - name: create command
     icinga_command:
       state: present
-      url: "https://example.com"
+      url: "{{ icinga_url }}"
       url_username: "{{ icinga_user }}"
       url_password: "{{ icinga_pass }}"
       arguments:

@@ -2,8 +2,8 @@
     icinga_user:
       state: present
       url: "{{ icinga_url }}"
-      url_username: "{{ icinga_username }}"
-      url_password: "{{ icinga_password }}"
+      url_username: "{{ icinga_user }}"
+      url_password: "{{ icinga_pass }}"
       imports:
         - "user"
       object_name: "rb"
