@@ -12,6 +12,8 @@ jobs:
     services:
       icinga:
         image: jordan/icinga2
+        ports:
+          80:80
         env:
           ICINGA2_FEATURE_DIRECTOR_PASS: "icinga"
     steps:
