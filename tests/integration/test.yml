@@ -7,7 +7,15 @@
     icinga_username: "icingaadmin"
     icinga_password: "icinga"
   tasks:
-    - shell: tree $ANSIBLE_COLLECTIONS_PATHS/
+    - shell: ls $ANSIBLE_COLLECTIONS_PATHS/*
+      register: out
+    - debug:
+        msg: "{{ out }}"
+    - shell: ls $ANSIBLE_COLLECTIONS_PATHS/*/*
+      register: out
+    - debug:
+        msg: "{{ out }}"
+    - shell: ls $ANSIBLE_COLLECTIONS_PATHS/*/*/*
       register: out
     - debug:
         msg: "{{ out }}"
