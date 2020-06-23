@@ -12,15 +12,16 @@ jobs:
         ports:
         - 80:80
     steps:
+      - name: Install ansible base (devel branch)
+        run: pip install https://github.com/ansible/ansible/archive/devel.tar.gz --disable-pip-version-check
       - name: Check out code
         uses: actions/checkout@v2
         with:
-          path: $GITHUB_WORKSPACE/collections/ansible_collections/t_systems_mms/icinga_director
+          path: collections/ansible_collections/t_systems_mms/icinga_director
       - name: Check out code
         uses: actions/checkout@v2
-      - name: Run playbook
-        uses: dawidd6/action-ansible-playbook@v2
+
+      - name: Run integration tests
+        run: ansible-playbook tests/integration/test.yml
         env:
-          ANSIBLE_COLLECTIONS_PATHS: ../../collections
-        with:
-          playbook: tests/integration/test.yml
+          ANSIBLE_COLLECTIONS_PATHS: collections/ansible_collections/t_systems_mms/icinga_director
