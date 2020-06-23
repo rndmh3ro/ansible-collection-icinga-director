@@ -7,7 +7,7 @@
     icinga_username: "icingaadmin"
     icinga_password: "icinga"
   tasks:
-    - shell: echo $GITHUB_WORKSPACE/collections; ls -lsa $GITHUB_WORKSPACE/collections
+    - shell: ls -lsa $GITHUB_WORKSPACE/collections/*/*/
       register: out
     - debug:
         msg: "{{ out }}"
