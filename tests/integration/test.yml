@@ -14,8 +14,8 @@
 
     - include_tasks: "{{ item }}"
       loop:
-        - ./icinga_command.yml
         - ./icinga_command_template.yml
+        - ./icinga_command.yml
         - ./icinga_timeperiod.yml
         - ./icinga_user_template.yml
         - ./icinga_user.yml
