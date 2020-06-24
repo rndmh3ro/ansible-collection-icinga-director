@@ -8,6 +8,11 @@
     icinga_user: "icingaadmin"
     icinga_pass: "icinga"
   tasks:
+    - shell: 'dig icinga'
+      ignore_errors: true
+    - shell: 'curl -H "Accept: application/json" -vL -k -u icingaadmin:icinga "http://icinga/icingaweb2/director/hosts"'
+      ignore_errors: true
+
     - include_tasks: "{{ item }}"
       loop:
         - ./icinga_command.yml
