@@ -40,7 +40,7 @@
           '--warning':
               value: $centreon_warning$
       command: "/opt/centreon-plugins/centreon_plugins.pl"
-      object_name: centreon-plugins-check
+      object_name: centreon-plugins-template
       disabled: False
       vars:
           centreon_maxrepetitions: 20
