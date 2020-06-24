@@ -8,9 +8,9 @@
     icinga_user: "icingaadmin"
     icinga_pass: "icinga"
   tasks:
-     - name: sleep for 60 seconds and continue with play
-       wait_for:
-         timeout: 60
+    - name: sleep for 60 seconds and continue with play
+      wait_for:
+        timeout: 60
 
     - include_tasks: "{{ item }}"
       loop:
