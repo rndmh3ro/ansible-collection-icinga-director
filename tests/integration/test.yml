@@ -4,7 +4,7 @@
   collections:
     - t_systems_mms.icinga_director
   vars:
-    icinga_url: "https://icinga/icingaweb2"
+    icinga_url: "http://icinga/icingaweb2"
     icinga_user: "icingaadmin"
     icinga_pass: "icinga"
   tasks:
