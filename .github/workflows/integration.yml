@@ -11,7 +11,6 @@ jobs:
         image: jordan/icinga2
         ports:
           - 80:80
-          - 443:443
     steps:
       - name: Check out code
         uses: actions/checkout@v2
@@ -21,6 +20,6 @@ jobs:
           path: ansible-collection-icinga-director/collections/ansible_collections/t_systems_mms/icinga_director
 
       - name: Run integration tests
-        run: ansible-playbook tests/integration/test.yml -vvvvv
+        run: ansible-playbook tests/integration/test.yml --diff -v
         env:
           ANSIBLE_COLLECTIONS_PATHS: ansible-collection-icinga-director/collections/:../../ansible-collection-icinga-director/collections/:collections/
