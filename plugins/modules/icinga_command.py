@@ -190,7 +190,7 @@ EXAMPLES = '''
       object_name: centreon-plugins
       imports:
         - centreon-plugins-template
-      timeouts: "1m"
+      timeout: "1m"
       vars:
           centreon_maxrepetitions: 20
           centreon_subsetleef: 20
